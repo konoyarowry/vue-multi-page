@@ -122,7 +122,7 @@ export const setShare = option => {
     }
     // 分享到朋友圈
     wx.onMenuShareTimeline({
-      title: '【买买商城】' + desc,
+      title: '【YFL】' + desc,
       desc: desc,
       link: createSpm(shareId.pyq),
       imgUrl: imgUrl,
