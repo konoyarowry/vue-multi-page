@@ -1,0 +1,23 @@
+@mixin border-radius($borderRadius:6px) {
+  &::after{
+    border-radius: $borderRadius;
+  }
+  @media only screen and (-webkit-min-device-pixel-ratio: 2) {
+    &::after {
+      border-radius: $borderRadius*2;
+    }
+  }
+  @media only screen and (-webkit-min-device-pixel-ratio: 3) {
+    &::after {
+      border-radius: $borderRadius*3;
+    }
+  }
+  @media only screen and (-webkit-min-device-pixel-ratio: 1.5) {
+    &::after {
+      border-radius: $borderRadius*1.5;
+    }
+  }
+}
+%border-radius{
+  @include border-radius()
+}

@@ -1,0 +1,110 @@
+@mixin border-chunk() {
+  z-index: 2;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+}
+
+@mixin border($borderWidth:1px,$borderColor:#e5e5e5,$ratio:1) {
+  %b-1px {
+    position: relative;
+    &::after {
+      @include border-chunk();
+      border: 1px solid $borderColor;
+      bottom: percentage(1-$ratio);
+      right:percentage(1-$ratio);
+      transform: scale(1/$ratio);
+      transform-origin: 0 0;
+    }
+  }
+
+  %blr-1px {
+    position: relative;
+    &::after {
+      @include border-chunk();
+      border-left: 1px solid $borderColor;
+      border-right: 1px solid $borderColor;
+      right: percentage(1-$ratio);
+      transform: scaleX(1/$ratio);
+      transform-origin: 0 0;
+    }
+  }
+
+  %btb-1px {
+    position: relative;
+    &::after {
+      @include border-chunk();
+      border-top: 1px solid $borderColor;
+      border-bottom: 1px solid $borderColor;
+      bottom: percentage(1-$ratio);
+      transform: scaleY(1/$ratio);
+      transform-origin: 0 0;
+    }
+  }
+
+  %bl-1px {
+    position: relative;
+    &::before {
+      @include border-chunk();
+      border-left: $borderWidth solid $borderColor;
+      width: 0;
+      right: auto;
+      transform: scaleX(1/$ratio);
+      transform-origin: 0 0;
+    }
+  }
+
+  %br-1px {
+    position: relative;
+    &::after {
+      @include border-chunk();
+      border-right: $borderWidth solid $borderColor;
+      width: 0;
+      left: auto;
+      transform: scaleX(1/$ratio);
+      transform-origin: 100% 0;
+    }
+  }
+
+  %bt-1px {
+    position: relative;
+    &::before {
+      @include border-chunk();
+      border-top: 1px solid $borderColor;
+      height: 0;
+      bottom: auto;
+      transform: scaleY(1/$ratio);
+      transform-origin: 50% 0;
+    }
+  }
+
+  %bb-1px {
+    position: relative;
+    &::after {
+      @include border-chunk();
+      border-bottom: 1px solid $borderColor;
+      height: 0;
+      top: auto;
+      transform: scaleY(1/$ratio);
+      transform-origin: 50% 100%;
+    }
+  }
+}
+
+@include border()
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5) {
+  @include border($ratio: 1.5)
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+  @include border($ratio: 2)
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 3) {
+  @include border($ratio: 3)
+}

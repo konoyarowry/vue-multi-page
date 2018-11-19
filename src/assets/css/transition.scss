@@ -1,0 +1,43 @@
+.fade {
+  &-enter, &-leave-to {
+    opacity: 0!important;
+    transform: scale(0)!important;
+  }
+  &-enter-active, &-leave-active {
+    transition: all .35s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+}
+
+.page {
+  &-enter, &-leave-to {
+    transform: translate3d(100%, 0, 0)!important
+  }
+  &-enter-active, &-leave-active {
+    transition: transform 0.45s cubic-bezier(0.23, 1, 0.32, 1)
+  }
+}
+
+.opacity {
+  &-enter, &-leave-to {
+    opacity: 0!important;
+  }
+  &-enter-active, &-leave-active {
+    transition: all .35s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+}
+
+.slide {
+  &-enter, &-leave-to {
+    height: 0!important;
+  }
+  &-enter-active, &-leave-active {
+    transition: all .55s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+}
+
+.trans{
+  transition: all .55s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.clockwise180{
+  transform: rotate(180deg);
+}

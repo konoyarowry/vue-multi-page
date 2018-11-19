@@ -1,0 +1,61 @@
+@import "border";
+@import "border-raiuds";
+@import "variable";
+$btnMainHeight:100px;
+$btnMiddleHeight:80px;
+
+.btn-main {
+  width: 100%;
+  height: $btnMainHeight;
+  font-size: 30px;
+  display: flex!important;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-middle {
+  width: 100%;
+  height: $btnMiddleHeight;
+  font-size: 30px;
+  display: flex!important;
+  align-items: center;
+  justify-content: center;
+}
+
+.flat-active-000-dot05{
+  &:active {
+    background: rgba(0, 0, 0, .05);
+  }
+}
+.flat-active {
+  &:active {
+    background: rgba(254, 105, 0, .05);
+  }
+}
+
+.flat-btn-main {
+  display: inline-block;
+  padding: 12px 18px;
+  font-size: $fontSize28;
+  @extend %b-1px;
+  color: $primary;
+  @extend %border-radius;
+  &::after {
+    @extend .flat-active;
+    border-color: $primary;
+  }
+  text-align: center;
+}
+.flat-btn-secondary {
+  display: inline-block;
+  padding: 12px 18px;
+  font-size: $fontSize28;
+  @extend %b-1px;
+  color: $fontColor;
+  @extend %border-radius;
+  &::after {
+    @extend .flat-active-000-dot05;
+    border-color: $borderColor;
+  }
+  text-align: center;
+}

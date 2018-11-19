@@ -1,0 +1,88 @@
+//row真屌
+$rowColor:#9d9d9d;
+$rowHeight:86px;
+$rowPad:20px;
+$rowPadPlus:26px;
+
+%base-row {
+  display: flex;
+  color: $rowColor;
+  background: #fff;
+  padding: 0 $rowPad;
+  width: 100%;
+  .lt {
+    margin-right: 28px;
+  }
+  .ct {
+    flex-grow: 1;
+  }
+  .rt {
+    margin-left: 10px;
+  }
+}
+
+.row {
+  @extend %base-row;
+  height: $rowHeight;
+  align-items: center;
+  .ct {
+    @extend %line-clamp-1
+  }
+  .lt{
+    white-space: nowrap;
+  }
+}
+
+.row-pad {
+  @extend %base-row;
+  padding: $rowPadPlus $rowPad;
+}
+
+.row-abs {
+  @extend %base-row;
+  padding: 0;
+  height: $rowHeight;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  .lt,.rt{
+    font-size: 28px;
+    position: absolute;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    width: 70px;
+    justify-content: center;
+    &:active{
+      background: rgba(0,0,0,.05);
+    }
+  }
+  .ct{
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .lt{
+    left: 0;
+  }
+  .rt{
+    right: 0;
+  }
+}
+
+.row-title{
+  color: #7d7d7d;
+  text-align: center;
+  padding: 24px;
+  background: #fff;
+  font-size: 30px;
+}
+
+.row-indent-wrapper{
+  background: #fff;
+  padding-left: $rowPad;
+  >.row{
+    padding-left: 0;
+  }
+}

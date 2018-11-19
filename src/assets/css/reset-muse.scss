@@ -1,0 +1,30 @@
+$primary: #fe6900;
+
+.mu-dialog-title {
+  font-size: 20px;
+}
+
+.mu-raised-button {
+  box-shadow: none;
+  line-height: normal;
+  &:active {
+    box-shadow: none;
+  }
+}
+.mu-flat-button{
+  line-height: normal;
+  height: auto;
+  overflow: visible;
+}
+.mu-infinite-scroll{
+  background: #fff;
+}
+.mu-circle-spinner {
+  border-color: $primary;
+}
+.mu-raised-button .mu-button-wrapper,.mu-flat-button .mu-button-wrapper{
+  padding: 0
+}
+.mu-bottom-item-icon{
+  width: auto;
+}

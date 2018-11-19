@@ -1,0 +1,73 @@
+@import "variable";
+@import "border";
+@import "row";
+@import "transition";
+@import "reset-muse";
+@import "border-raiuds";
+@import "button";
+
+html,body{
+  height: 100%;
+}
+body {
+  margin: 0 auto!important;
+  line-height: normal!important;
+}
+
+img {
+  display: block;
+}
+a{
+  color: $fontColor;
+}
+.body {
+  font-size: 26px;
+  background: $bgDeep
+}
+.line-height-1d2{
+  line-height: 1.2;
+}
+.bgfff{
+  background: #fff;
+}
+
+.iconfont {
+  font-size: 28px;
+}
+
+%line-clamp-1 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@for $i from 2 through 3 {
+  %line-clamp-#{$i} {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $i;
+    overflow: hidden;
+  }
+}
+.noscroll{
+  overflow: hidden;
+}
+
+.mask{
+  background: rgba(0, 0, 0, 0.5);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 2019;
+  top: 0;
+  left:0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flex-aj-center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
