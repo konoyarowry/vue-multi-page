@@ -29,7 +29,7 @@ export const $loc = function (url) {
 }
 
 export const $back = function () {
-  if(document.referrer&&document.referrer.indexOf('maimaiti')>-1){
+  if(document.referrer){
     history.back()
   }else{
     location.href = $path.homePage
